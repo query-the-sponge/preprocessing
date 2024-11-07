@@ -1,4 +1,5 @@
 import pandas as pd
+import regex as re
 
 # Read the CSV file
 df = pd.read_csv("./dataset/characters.csv", delimiter=";", quotechar='"', encoding_errors='ignore')
@@ -20,10 +21,24 @@ def safe_eval(x):
         return x
 
 
+# Remove parentheses and only keep the main word
+def clean_text(text):
+    # Check if the input is a string
+    if isinstance(text, str):
+        # Use regex to remove all parentheses and the text within them
+        cleaned_text = text.replace("\"", "")
+        result = re.sub(r"\s*\([^)]*\)", "", cleaned_text)
+        return result
+    else:
+        # If the cell is not a string, return it as-is (or return "")
+        return text
+
+
 # Loop each column
 for col in lst:
     # Convert the column to a list (if needed)
     df[col] = df[col].apply(safe_eval)
+    df[col] = df[col].apply(clean_text)
     # Explode the column
     df = df.explode(col).reset_index(drop=True)
 
