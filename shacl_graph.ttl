@@ -1,0 +1,320 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shapes: <http://example.org/shapes#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/shapes#vocab#ClassifiesAsShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#ClassifiesAs> .
+
+<http://example.org/shapes#vocab#HasViewersShape> a sh:PropertyShape ;
+    sh:datatype xsd:decimal ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#HasViewers> .
+
+<http://example.org/shapes#vocab#firstAppearanceOnShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Episode> ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#firstAppearanceOn> .
+
+<http://example.org/shapes#vocab#generalInfoShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/EpisodeRole> ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#generalInfo> .
+
+<http://example.org/shapes#vocab#hasAirdateShape> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasAirdate> .
+
+<http://example.org/shapes#vocab#hasAnimationSupervisorShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasAnimationSupervisor> .
+
+<http://example.org/shapes#vocab#hasAnimatorsShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasAnimators> .
+
+<http://example.org/shapes#vocab#hasAppearanceShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Episode> ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasAppearance> .
+
+<http://example.org/shapes#vocab#hasCharacterShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Character> ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasCharacter> .
+
+<http://example.org/shapes#vocab#hasChildrenShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Character> ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasChildren> .
+
+<http://example.org/shapes#vocab#hasColorShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasColor> .
+
+<http://example.org/shapes#vocab#hasCopyrightYearShape> a sh:PropertyShape ;
+    sh:datatype xsd:gYear ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasCopyrightYear> .
+
+<http://example.org/shapes#vocab#hasCreativesShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasCreatives> .
+
+<http://example.org/shapes#vocab#hasEpisodeNoShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasEpisodeNo> .
+
+<http://example.org/shapes#vocab#hasExplanationShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:PortrayalRoleShape ;
+    sh:path <http://example.org/vocab#hasExplanation> .
+
+<http://example.org/shapes#vocab#hasEyeColorShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasEyeColor> .
+
+<http://example.org/shapes#vocab#hasGenderShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasGender> .
+
+<http://example.org/shapes#vocab#hasGuestsShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasGuests> .
+
+<http://example.org/shapes#vocab#hasLineProducerShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasLineProducer> .
+
+<http://example.org/shapes#vocab#hasMainShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasMain> .
+
+<http://example.org/shapes#vocab#hasNextEpisodeShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Episode> ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasNextEpisode> .
+
+<http://example.org/shapes#vocab#hasOccupationShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasOccupation> .
+
+<http://example.org/shapes#vocab#hasParentsShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Character> ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasParents> .
+
+<http://example.org/shapes#vocab#hasPortrayerShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/PortrayalRole> ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasPortrayer> .
+
+<http://example.org/shapes#vocab#hasPremiereTimeShape> a sh:PropertyShape ;
+    sh:class xsd:time ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasPremiereTime> .
+
+<http://example.org/shapes#vocab#hasPreviousEpisodeShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Episode> ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasPreviousEpisode> .
+
+<http://example.org/shapes#vocab#hasProductionCodeShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasProductionCode> .
+
+<http://example.org/shapes#vocab#hasRoleShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasRole> .
+
+<http://example.org/shapes#vocab#hasRunningTimeShape> a sh:PropertyShape ;
+    sh:datatype xsd:duration ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasRunningTime> .
+
+<http://example.org/shapes#vocab#hasSisterEpisodesShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Episode> ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasSisterEpisodes> .
+
+<http://example.org/shapes#vocab#hasSpouseShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Character> ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#hasSpouse> .
+
+<http://example.org/shapes#vocab#hasStoryboardArtistsShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasStoryboardArtists> .
+
+<http://example.org/shapes#vocab#hasStoryboardShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasStoryboard> .
+
+<http://example.org/shapes#vocab#hasSupervisingProducersShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasSupervisingProducers> .
+
+<http://example.org/shapes#vocab#hasSupervisorShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasSupervisor> .
+
+<http://example.org/shapes#vocab#hasTechnicalsShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasTechnicals> .
+
+<http://example.org/shapes#vocab#hasTitleShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasTitle> .
+
+<http://example.org/shapes#vocab#hasWritersShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:EpisodeRoleShape ;
+    sh:path <http://example.org/vocab#hasWriters> .
+
+<http://example.org/shapes#vocab#inEpisodeShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Episode> ;
+    sh:node shapes:PortrayalRoleShape ;
+    sh:path <http://example.org/vocab#inEpisode> .
+
+<http://example.org/shapes#vocab#latestAppearanceOnShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Episode> ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#latestAppearanceOn> .
+
+<http://example.org/shapes#vocab#onSeasonNoShape> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:node shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#onSeasonNo> .
+
+<http://example.org/shapes#vocab#portrayedByShape> a sh:PropertyShape ;
+    sh:class <http://example.org/data/Human> ;
+    sh:node shapes:PortrayalRoleShape ;
+    sh:path <http://example.org/vocab#portrayedBy> .
+
+<http://example.org/shapes#vocab#residesAtShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape ;
+    sh:path <http://example.org/vocab#residesAt> .
+
+<http://example.org/shapes#vocab#hasNameShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape,
+        shapes:HumanShape ;
+    sh:path <http://example.org/vocab#hasName> .
+
+<http://example.org/shapes#vocab#hasUrlShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape,
+        shapes:EpisodeShape ;
+    sh:path <http://example.org/vocab#hasUrl> .
+
+shapes:HumanShape a sh:NodeShape ;
+    sh:property <http://example.org/shapes#22-rdf-syntax-ns#typeShape>,
+        <http://example.org/shapes#rdf-schema#labelShape>,
+        <http://example.org/shapes#vocab#hasNameShape> ;
+    sh:targetClass <http://example.org/data/Human> .
+
+<http://example.org/shapes#rdf-schema#labelShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:node shapes:CharacterShape,
+        shapes:EpisodeShape,
+        shapes:HumanShape ;
+    sh:path rdfs:label .
+
+shapes:PortrayalRoleShape a sh:NodeShape ;
+    sh:property <http://example.org/shapes#22-rdf-syntax-ns#typeShape>,
+        <http://example.org/shapes#vocab#hasExplanationShape>,
+        <http://example.org/shapes#vocab#inEpisodeShape>,
+        <http://example.org/shapes#vocab#portrayedByShape> ;
+    sh:targetClass <http://example.org/data/PortrayalRole> .
+
+<http://example.org/shapes#22-rdf-syntax-ns#typeShape> a sh:PropertyShape ;
+    sh:class owl:Thing ;
+    sh:node shapes:CharacterShape,
+        shapes:EpisodeRoleShape,
+        shapes:EpisodeShape,
+        shapes:HumanShape,
+        shapes:PortrayalRoleShape ;
+    sh:path rdf:type .
+
+shapes:EpisodeRoleShape a sh:NodeShape ;
+    sh:property <http://example.org/shapes#22-rdf-syntax-ns#typeShape>,
+        <http://example.org/shapes#vocab#hasAnimationSupervisorShape>,
+        <http://example.org/shapes#vocab#hasAnimatorsShape>,
+        <http://example.org/shapes#vocab#hasCreativesShape>,
+        <http://example.org/shapes#vocab#hasGuestsShape>,
+        <http://example.org/shapes#vocab#hasLineProducerShape>,
+        <http://example.org/shapes#vocab#hasMainShape>,
+        <http://example.org/shapes#vocab#hasRoleShape>,
+        <http://example.org/shapes#vocab#hasStoryboardArtistsShape>,
+        <http://example.org/shapes#vocab#hasStoryboardShape>,
+        <http://example.org/shapes#vocab#hasSupervisingProducersShape>,
+        <http://example.org/shapes#vocab#hasSupervisorShape>,
+        <http://example.org/shapes#vocab#hasTechnicalsShape>,
+        <http://example.org/shapes#vocab#hasWritersShape> ;
+    sh:targetClass <http://example.org/data/EpisodeRole> .
+
+shapes:CharacterShape a sh:NodeShape ;
+    sh:property <http://example.org/shapes#22-rdf-syntax-ns#typeShape>,
+        <http://example.org/shapes#rdf-schema#labelShape>,
+        <http://example.org/shapes#vocab#ClassifiesAsShape>,
+        <http://example.org/shapes#vocab#firstAppearanceOnShape>,
+        <http://example.org/shapes#vocab#hasAppearanceShape>,
+        <http://example.org/shapes#vocab#hasChildrenShape>,
+        <http://example.org/shapes#vocab#hasColorShape>,
+        <http://example.org/shapes#vocab#hasEyeColorShape>,
+        <http://example.org/shapes#vocab#hasGenderShape>,
+        <http://example.org/shapes#vocab#hasNameShape>,
+        <http://example.org/shapes#vocab#hasOccupationShape>,
+        <http://example.org/shapes#vocab#hasParentsShape>,
+        <http://example.org/shapes#vocab#hasPortrayerShape>,
+        <http://example.org/shapes#vocab#hasSpouseShape>,
+        <http://example.org/shapes#vocab#hasUrlShape>,
+        <http://example.org/shapes#vocab#latestAppearanceOnShape>,
+        <http://example.org/shapes#vocab#residesAtShape> ;
+    sh:targetClass <http://example.org/data/Character> .
+
+shapes:EpisodeShape a sh:NodeShape ;
+    sh:property <http://example.org/shapes#22-rdf-syntax-ns#typeShape>,
+        <http://example.org/shapes#rdf-schema#labelShape>,
+        <http://example.org/shapes#vocab#HasViewersShape>,
+        <http://example.org/shapes#vocab#generalInfoShape>,
+        <http://example.org/shapes#vocab#hasAirdateShape>,
+        <http://example.org/shapes#vocab#hasCharacterShape>,
+        <http://example.org/shapes#vocab#hasCopyrightYearShape>,
+        <http://example.org/shapes#vocab#hasEpisodeNoShape>,
+        <http://example.org/shapes#vocab#hasNextEpisodeShape>,
+        <http://example.org/shapes#vocab#hasPremiereTimeShape>,
+        <http://example.org/shapes#vocab#hasPreviousEpisodeShape>,
+        <http://example.org/shapes#vocab#hasProductionCodeShape>,
+        <http://example.org/shapes#vocab#hasRunningTimeShape>,
+        <http://example.org/shapes#vocab#hasSisterEpisodesShape>,
+        <http://example.org/shapes#vocab#hasTitleShape>,
+        <http://example.org/shapes#vocab#hasUrlShape>,
+        <http://example.org/shapes#vocab#onSeasonNoShape> ;
+    sh:targetClass <http://example.org/data/Episode> .
+

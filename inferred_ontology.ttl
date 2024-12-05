@@ -1,0 +1,204 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix v: <http://example.org/vocab#> .
+@base <http://example.org/data/> .
+
+v:ClassifiesAs a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range xsd:string .
+
+v:HasViewers a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:decimal .
+
+v:firstAppearanceOn a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range <Episode> .
+
+v:generalInfo a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range <EpisodeRole> .
+
+v:hasAirdate a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:date .
+
+v:hasAnimationSupervisor a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasAnimators a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasAppearance a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range <Episode> .
+
+v:hasCharacter a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range <Character> .
+
+v:hasChildren a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range <Character> .
+
+v:hasColor a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range xsd:string .
+
+v:hasCopyrightYear a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:gYear .
+
+v:hasCreatives a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasEpisodeNo a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:string .
+
+v:hasExplanation a rdf:Property ;
+    rdfs:domain <PortrayalRole> ;
+    rdfs:range xsd:string .
+
+v:hasEyeColor a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range xsd:string .
+
+v:hasGender a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range xsd:string .
+
+v:hasGuests a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasLineProducer a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasMain a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasName a rdf:Property ;
+    rdfs:domain <Character>, <Human> ;
+    rdfs:range xsd:string .
+
+v:hasNextEpisode a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range <Episode> .
+
+v:hasOccupation a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range xsd:string .
+
+v:hasParents a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range <Character> .
+
+v:hasPortrayer a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range <PortrayalRole> .
+
+v:hasPremiereTime a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:time .
+
+v:hasPreviousEpisode a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range <Episode> .
+
+v:hasProductionCode a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:string .
+
+v:hasRole a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range xsd:string .
+
+v:hasRunningTime a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:duration .
+
+v:hasSisterEpisodes a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range <Episode> .
+
+v:hasSpouse a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range <Character> .
+
+v:hasStoryboard a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasStoryboardArtists a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasSupervisingProducers a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasSupervisor a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasTechnicals a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:hasTitle a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:string .
+
+v:hasUrl a rdf:Property ;
+    rdfs:domain <Character>, <Episode> ;
+    rdfs:range xsd:string .
+
+v:hasWriters a rdf:Property ;
+    rdfs:domain <EpisodeRole> ;
+    rdfs:range <Human> .
+
+v:inEpisode a rdf:Property ;
+    rdfs:domain <PortrayalRole> ;
+    rdfs:range <Episode> .
+
+v:latestAppearanceOn a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range <Episode> .
+
+v:onSeasonNo a rdf:Property ;
+    rdfs:domain <Episode> ;
+    rdfs:range xsd:integer .
+
+v:portrayedBy a rdf:Property ;
+    rdfs:domain <PortrayalRole> ;
+    rdfs:range <Human> .
+
+v:residesAt a rdf:Property ;
+    rdfs:domain <Character> ;
+    rdfs:range xsd:string .
+
+rdf:type a rdf:Property ;
+    rdfs:domain <Character>, <Episode>, <EpisodeRole>, <Human>, <PortrayalRole> ;
+    rdfs:range owl:Thing .
+
+rdfs:label a rdf:Property ;
+    rdfs:domain <Character>, <Episode>, <Human> ;
+    rdfs:range xsd:string .
+
+<PortrayalRole> a owl:Class .
+
+<EpisodeRole> a owl:Class .
+
+<Character> a owl:Class .
+
+<Episode> a owl:Class .
+
+<Human> a owl:Class .

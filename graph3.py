@@ -136,7 +136,7 @@ def main():
                     g.add((human_node, vocab.hasName, Literal(name, datatype=XSD.string)))
                     relationship_node = BNode()
                     g.add((relationship_node, RDF.type, URIRef(f"{base_uri}PortrayalRole")))
-                    g.add((relationship_node, vocab.hasPortrayer, human_node))
+                    g.add((relationship_node, vocab.portrayedBy, human_node))
                     if explanation:
                         g.add((relationship_node, vocab.hasExplanation, Literal(explanation, datatype=XSD.string)))
                     g.add((URIRef(f"{base_uri}{char_name}"), vocab.hasPortrayer, relationship_node))
@@ -144,7 +144,7 @@ def main():
                         clean_episode = process_string(episode_name)
                         if clean_episode in EPS_DICT:
                             episode_ref = EPS_DICT[clean_episode]
-                            g.add((relationship_node, vocab.appliesTo, URIRef(f"{base_uri}{episode_ref}")))
+                            g.add((relationship_node, vocab.inEpisode, URIRef(f"{base_uri}{episode_ref}")))
             elif key in CHAR_INFO_EPS:
                 eps_title = char["info"][key]
                 if type(eps_title) == list:
@@ -218,7 +218,7 @@ def main():
                         relationship_node = BNode()
                         g.add((relationship_node, RDF.type, URIRef(f"{base_uri}EpisodeRole")))
                         g.add((relationship_node, vocab[predicate], person_uri))
-                        g.add((URIRef(f"{base_uri}{eps_ref}"), vocab.appliesTo, relationship_node))
+                        g.add((URIRef(f"{base_uri}{eps_ref}"), vocab.generalInfo, relationship_node))
                         if metadata:
                             g.add((relationship_node, vocab.hasRole, Literal(metadata, datatype=XSD.string)))
                         g.add((person_uri, RDF.type, URIRef(f"{base_uri}Human")))
@@ -231,7 +231,7 @@ def main():
                     relationship_node = BNode()
                     g.add((relationship_node, RDF.type, URIRef(f"{base_uri}EpisodeRole")))
                     g.add((relationship_node, vocab[predicate], person_uri))
-                    g.add((URIRef(f"{base_uri}{eps_ref}"), vocab.appliesTo, relationship_node))
+                    g.add((URIRef(f"{base_uri}{eps_ref}"), vocab.generalInfo, relationship_node))
                     if metadata:
                         g.add((relationship_node, vocab.hasRole, Literal(metadata, datatype=XSD.string)))
                     g.add((person_uri, RDF.type, URIRef(f"{base_uri}Human")))
