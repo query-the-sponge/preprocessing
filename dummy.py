@@ -1,3 +1,5 @@
+from rdflib.namespace import XSD
+
 CHAR_FIRST = {"name" : "hasName", 
             #   "info" : , 
               "url" : "hasUrl"}
@@ -29,6 +31,8 @@ CHAR_INFO_LITERAL = {
     'Eye color': 'hasEyeColor'
     }
 
+CHAR_INFO_LITERAL_TYPES = {key: XSD.string for key in CHAR_INFO_LITERAL}
+
 CHAR_INFO_CHAR = {
     'Children': 'hasChildren', 
     'Parents': 'hasParents', 
@@ -46,27 +50,41 @@ CHAR_INFO_PASS = {
     }
 
 EPS_INFO_LITERAL = {
-    'Production code': 'hasProductionCode', 
-    'Season No': 'onSeasonNo', 
-    'Episode No': 'hasEpisodeNo', 
-    'Airdate': 'hasAirdate', 
-    'U.S. premiere time (ET)': 'hasPremiereTime', 
-    'Copyright year': 'hasCopyrightYear', 
-    'U.S. viewers (millions)': 'HasViewers', 
-    'Running time': 'hasRunningTime', 
-    'Writer(s)': 'hasWriters', 
-    'Storyboard Artist(s)': 'hasStoryboardArtists', 
-    'Storyboard': 'hasStoryboard', 
-    'Animation': 'hasAnimatiors', 
-    'Creative': 'hasCreatives', 
-    'Guest(s)': 'hasGuests', 
-    'Supervising': 'hasSupervisor', 
-    'Line Producer': 'hasLineProducer', 
-    'Main': 'hasMain', 
-    'Supervising Producer(s)': 'hasSupervisingProducers',
-    'Technical': 'hasTechnicals', 
-    'Animation Supervisor': 'hasAnimationSupervisor'
-    }
+    "Production code": "hasProductionCode",
+    "Season №": "onSeasonNo",
+    "Episode №": "hasEpisodeNo",
+    "Airdate": "hasAirdate",
+    "U.S. premiere time (ET)": "hasPremiereTime",
+    "Copyright year": "hasCopyrightYear",
+    "U.S. viewers (millions)": "HasViewers",
+    "Running time": "hasRunningTime",
+}
+
+EPS_INFO_LITERAL_TYPES = {
+    "Production code": XSD.string,
+    "Season №": XSD.integer,
+    "Episode №": XSD.string,
+    "Airdate": XSD.date,
+    "U.S. premiere time (ET)": XSD.time,
+    "Copyright year": XSD.gYear,
+    "U.S. viewers (millions)": XSD.decimal,
+    "Running time": XSD.duration,
+}
+
+EPS_INFO_NODES = {
+    "Writer(s)": "hasWriters",
+    "Storyboard Artist(s)": "hasStoryboardArtists",
+    "Storyboard": "hasStoryboard",
+    "Animation": "hasAnimators",
+    "Creative": "hasCreatives",
+    "Guest(s)": "hasGuests",
+    "Supervising": "hasSupervisor",
+    "Line Producer": "hasLineProducer",
+    "Main": "hasMain",
+    "Supervising Producer(s)": "hasSupervisingProducers",
+    "Technical": "hasTechnicals",
+    "Animation Supervisor": "hasAnimationSupervisor",
+}
 
 EPS_INFO_EPS = {
     'Sister episode(s)': 'hasSisterEpisodes',

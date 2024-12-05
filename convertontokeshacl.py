@@ -30,6 +30,6 @@ def ontology_to_shacl(ontology_graph):
     return shacl_graph
 
 ontology_graph = Graph()
-ontology_graph.parse("inferred_ontology.ttl", format="turtle")
+ontology_graph.parse("./result/inferred_ontology.ttl", format="turtle")
 shacl_graph = ontology_to_shacl(ontology_graph)
-shacl_graph.serialize("shacl_graph.ttl", format="turtle")
+shacl_graph.serialize("./result/shacl_graph.ttl", format="turtle")

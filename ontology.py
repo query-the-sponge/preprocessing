@@ -50,7 +50,7 @@ def infer_ontology(graph):
     return ontology
 
 g = Graph()
-g.parse("./result/output3.ttl", format="turtle")
+g.parse("./result/output.ttl", format="turtle")
 
 ontology_graph = infer_ontology(g)
-ontology_graph.serialize("inferred_ontology.ttl", format="turtle")
+ontology_graph.serialize("./result/inferred_ontology.ttl", format="turtle")
